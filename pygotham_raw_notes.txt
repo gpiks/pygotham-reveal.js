@@ -1,0 +1,87 @@
+Atomics and concurrency---------
+Monadical--------
+
+databack ups
+
+transaction.atomic(): -> isolated methods that ensure validity when there are concurrent writes
+
+
+potential project -> implement a raft python nodes using docker compose
+
+spanner/cockroachdb/tidb
+
+floats and atomics
+
+concurrency avoidable - use queues
+
+
+Latency in asyncio-------------------
+(instagram)
+
+why--
+especially good with waiting not something that is cpu intensive
+
+gather -> run co-routines in parelllel
+(single threaded)
+
+
+
+measure latency--
+before time
+after time
+
+
+
+
+
+tactics to improve latency
+- offload to a processor function
+- delve into why there are blocking function. essentially if you have any bblocking or uncoopoerative method the async is almost useless
+- what is in your critical path - especially with functions being run in parallel
+- ```gathers``` are useful
+- depends on your bottlenecks (if your bottlenecks are cpu intensive then you may need to use c++)
+
+Questions:
+- custom event loops? or standard loops
+- how you find the real culprit function -> latency measurement tool /lindsey?? counters around functions using wall clock(doesnt seem sophisticated to me)
+
+https://github.com/python/cpython/blob/master/Lib/asyncio/base_events.py
+
+https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/ch02.html
+
+
+Coroutines and concurrency-------------------------------------
+
+generators for lazy evaluation
+pipe generators for database access
+pep342 -> yield is an expression not statement
+
+next() and send() for sending values to coroutines
+
+scheduler and pool -> generators and yield usage (research)
+
+
+Memory management in python-----------------------
+
+circular references
+tree traversal of memory tree
+generational garbage collection
+pep442 3.4 and greater actually looks at objects that have __del__ (which was ignore before 3.4)
+
+
+
+
+packaging in python-------------------
+
+
+
+
+Closing talks-----------
+
+aagg@comcast.net
+
+
+
+
+
+
