@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>Pygotham Recap!</section>
+				<section data-markdown>
+					<script type="text/template">
+						Outline
+						- Atomics <!-- .element: class="fragment" data-fragment-index="1" -->
+						- Asyncio and latency <!-- .element: class="fragment" data-fragment-index="2" -->
+						- Generators and concurrency <!-- .element: class="fragment" data-fragment-index="3" -->
+						- Memory management <!-- .element: class="fragment" data-fragment-index="4" -->
+						- Random musings :) <!-- .element: class="fragment" data-fragment-index="5" -->
+					</script>
+				</section>
+				<section data-markdown>					
+					<script type="text/template">
+						Atomics
+						- @transction.atomic <!-- .element: class="fragment" data-fragment-index="1" -->
+						- Avoid concurrency, use queues <!-- .element: class="fragment" data-fragment-index="2" -->
+					</script>
+				</section>
+				<section>
+					<section data-markdown>				
+						<script type="text/template">
+							Asyncio and Latency
+							- Async methods and when are they useful <!-- .element: class="fragment" data-fragment-index="1" -->
+							- Gather <!-- .element: class="fragment" data-fragment-index="2" -->
+							- Latency measuring <!-- .element: class="fragment" data-fragment-index="3" -->
+							- How to improve? <!-- .element: class="fragment" data-fragment-index="4" -->
+						</script>
+					</section>	
+					<section data-markdown>					
+						<script type="text/template">
+							Additional fun stuff 	
+							* Custom event loops
+							(https://github.com/python/cpython/blob/master/Lib/asyncio/base_events.py)
+							* Line_profiler, cProfile 
+								* Safari book on this topic! (https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/ch02.html)
+						</script>
+					</section>
+				</section>
+				<section data-markdown>				
+					<script type="text/template">
+						Generators and concurrency 
+						- Lazy evaluation - pipe generators <!-- .element: class="fragment" data-fragment-index="1" -->
+						- ```next()``` and ```send()``` <!-- .element: class="fragment" data-fragment-index="2" -->
+					</script>
+				</section>
+				<section data-markdown>				
+					<script type="text/template">
+						Memory management 
+						- Lazy evaluation - pipe generators <!-- .element: class="fragment" data-fragment-index="1" -->
+						- ```next()``` and ```send()``` <!-- .element: class="fragment" data-fragment-index="2" -->
+						- Design to use generators or pools <!-- .element: class="fragment" data-fragment-index="3" -->
+					</script>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
